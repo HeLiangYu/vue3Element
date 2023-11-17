@@ -80,5 +80,12 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import MyButtom from '@/components/button/Button.vue'
+
+const btnRef = ref(null)
+function clickHandler(e) {
+  // console.log(e)
+  console.log(btnRef.value._ref)
+}
 </script>

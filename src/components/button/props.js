@@ -5,5 +5,6 @@ export default {
   round: Boolean,
   disabled: Boolean,
   loading: Boolean,
-  icon: String
+  icon: String,
+  circle: Boolean
 }
