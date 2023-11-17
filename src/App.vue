@@ -1,0 +1,76 @@
+<template>
+  <div>
+    <nav>
+      <RouterLink v-for="item in linkList" :key="item.title" :to="item.value">{{
+        item.title
+      }}</RouterLink>
+    </nav>
+    <RouterView />
+  </div>
+</template>
+
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+
+import { reactive } from 'vue'
+
+const linkList = reactive([
+  {
+    value: '/',
+    title: 'Icon'
+  },
+  {
+    value: '/button',
+    title: 'Button'
+  },
+  {
+    value: '/card',
+    title: 'Card'
+  },
+  {
+    value: '/collapse',
+    title: 'Collapse'
+  },
+  {
+    value: '/dialog',
+    title: 'Dialog'
+  },
+  {
+    value: '/pager',
+    title: 'Pager'
+  },
+  {
+    value: '/tooltip',
+    title: 'Tooltip'
+  }
+])
+</script>
+
+<style lang="scss">
+nav {
+  display: flex;
+  height: 50px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.active {
+  border-bottom: 3px solid hsla(160, 100%, 37%, 1);
+}
+
+h1.row-title {
+  text-align: center;
+  // margin-top: 5em;
+  font-weight: 200;
+  margin: 20px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+.content {
+  width: 800px;
+  margin: 50px auto;
+}
+</style>

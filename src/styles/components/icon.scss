@@ -1,0 +1,10 @@
+.icon-color {
+  fill: currentColor;
+  color: var(--icon-color);
+}
+
+@each $val in primary, info, success, waring, danger {
+  .icon-#{$val}-color {
+    --icon-color: var(--color-#{$val});
+  }
+}

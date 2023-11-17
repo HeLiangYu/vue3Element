@@ -1,0 +1,77 @@
+$colors: (
+  primary: #409eff,
+  success: #67c23a,
+  waring: #e6a23c,
+  danger: #f56c6c,
+  info: #909399
+);
+
+:root {
+  @each $key, $val in $colors {
+    // 主题色
+    --color-#{$key}: #{$val};
+    @for $i from 1 through 4 {
+      $iVal: $i * 2 + 1;
+      //   不同亮度的颜色
+      --color-#{$key}-light-#{$iVal}: #{mix(#fff, $val, $iVal * 10 * 1%)};
+    }
+    --color-#{$key}-dark-2: #{mix(#000, $val, 20%)};
+    --color-#{$key}-light-8: #{mix(#fff, $val, 80%)};
+  }
+
+  // 接下来，还有一些其他的颜色变量
+  // 对应的是 ElementUI 里面的中性色
+  --color-white: #fff;
+  --color-black: #000;
+  --bg-color: #ffffff;
+  --bg-color-page: #f2f3f5;
+  --bg-color-overlay: #ffffff;
+  --text-color-primary: #303133;
+  --text-color-regular: #606266;
+  --text-color-secondary: #909399;
+  --text-color-placeholder: #a8abb2;
+  --text-color-disabled: #c0c4cc;
+  --border-color: #dcdfe6;
+  --border-color-light: #e4e7ed;
+  --border-color-lighter: #ebeef5;
+  --border-color-extra-light: #f2f6fc;
+  --border-color-dark: #d4d7de;
+  --border-color-darker: #cdd0d6;
+  --fill-color: #f0f2f5;
+  --fill-color-light: #f5f7fa;
+  --fill-color-lighter: #fafafa;
+  --fill-color-extra-light: #fafcff;
+  --fill-color-dark: #ebedf0;
+  --fill-color-darker: #e6e8eb;
+  --fill-color-blank: #ffffff;
+
+  // 和 border 相关的变量
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color-hover: var(--text-color-disabled);
+  --border: var(--border-width) var(--border-style) var(--border-color);
+  --border-radius-base: 4px;
+  --border-radius-small: 2px;
+  --border-radius-round: 20px;
+  --border-radius-circle: 100%;
+
+  // 和 font 相关的变量
+  --font-size-extra-large: 20px;
+  --font-size-large: 18px;
+  --font-size-medium: 16px;
+  --font-size-base: 14px;
+  --font-size-small: 13px;
+  --font-size-extra-small: 12px;
+  --font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --font-weight-primary: 500;
+
+  // 和 disabled 相关的变量
+  --disabled-bg-color: var(--fill-color-light);
+  --disabled-text-color: var(--text-color-placeholder);
+  --disabled-border-color: var(--border-color-light);
+
+  // 和 transition 过渡相关的变量
+  --transition-duration: 0.3s;
+  --transition-duration-fast: 0.2s;
+}
