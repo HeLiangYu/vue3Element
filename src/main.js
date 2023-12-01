@@ -13,10 +13,13 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import { vPermission } from './directives/permission'
 
 library.add(fas)
 
 const app = createApp(App)
+
+app.directive('permission', vPermission)
 
 app.component('font-awesome-icon', FontAwesomeIcon)
 

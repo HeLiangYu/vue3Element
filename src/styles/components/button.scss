@@ -97,7 +97,7 @@
   }
 }
 
-@each $type in primary, success, waring, danger, info {
+@each $type in primary, success, warning, danger, info {
   .my-button-#{$type} {
     --button-text-color: var(--color-white);
     --button-bg-color: var(--color-#{$type});

@@ -1,8 +1,8 @@
 <template>
   <div>
     <nav>
-      <RouterLink v-for="item in linkList" :key="item.title" :to="item.value">{{
-        item.title
+      <RouterLink v-for="item in linkList" :key="item.name" :to="item.path">{{
+        item.name
       }}</RouterLink>
     </nav>
     <RouterView />
@@ -13,37 +13,12 @@
 import { RouterLink, RouterView } from 'vue-router'
 
 import { reactive } from 'vue'
+import { autoImport } from './router/index'
 
-const linkList = reactive([
-  {
-    value: '/',
-    title: 'Icon'
-  },
-  {
-    value: '/button',
-    title: 'Button'
-  },
-  {
-    value: '/card',
-    title: 'Card'
-  },
-  {
-    value: '/collapse',
-    title: 'Collapse'
-  },
-  {
-    value: '/dialog',
-    title: 'Dialog'
-  },
-  {
-    value: '/pager',
-    title: 'Pager'
-  },
-  {
-    value: '/tooltip',
-    title: 'Tooltip'
-  }
-])
+const arr = autoImport()
+
+const linkList = reactive(arr)
+console.log(linkList)
 </script>
 
 <style lang="scss">

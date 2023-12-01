@@ -3,7 +3,7 @@
   color: var(--icon-color);
 }
 
-@each $val in primary, info, success, waring, danger {
+@each $val in primary, info, success, warning, danger {
   .icon-#{$val}-color {
     --icon-color: var(--color-#{$val});
   }
